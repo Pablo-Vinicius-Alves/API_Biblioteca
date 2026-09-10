@@ -6,8 +6,9 @@ async function carregarLivros(){
     const listaHtml = dados.map(livro => {
         return `<p>${livro.nome} - ${livro.autor} - ${livro.status}</p>`;
     });
-
     divLivros.innerHTML = listaHtml.join('');
 }
+
+form.addEventListener('submit', );
 
 carregarLivros();
