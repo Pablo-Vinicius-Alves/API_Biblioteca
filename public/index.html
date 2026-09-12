@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estante</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+
+<body>
+    <div class="pagina">
+
+        <header class="topo">
+            <h1>Estante</h1>
+            <p class="subtitulo">Seus livros, organizados por onde estão na leitura.</p>
+        </header>
+
+        <div class="layout">
+
+            <aside class="painel-form">
+                <h2>Adicionar livro</h2>
+                <form id="form-livro">
+                    <div class="campo">
+                        <label for="titulo-livro">Título</label>
+                        <input type="text" id="titulo-livro" name="nome" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="autor-livro">Autor</label>
+                        <input type="text" id="autor-livro" name="autor" required>
+                    </div>
+
+                    <div class="linha-dupla">
+                        <div class="campo">
+                            <label for="paginas-livro">Páginas</label>
+                            <input type="number" id="paginas-livro" name="paginas" min="1">
+                        </div>
+
+                        <div class="campo">
+                            <label for="status">Status</label>
+                            <select id="status" name="status">
+                                <option value="Pretendo ler">Pretendo ler</option>
+                                <option value="Lendo">Lendo</option>
+                                <option value="Finalizado">Finalizado</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit">Adicionar à estante</button>
+                    <p class="erro-form" id="erro-form" hidden></p>
+                </form>
+            </aside>
+
+            <main class="estante">
+                <section class="prateleira" data-status="Pretendo ler">
+                    <h2>Pretendo ler <span class="contagem" id="contagem-pretendo">0</span></h2>
+                    <div class="lista-livros" id="lista-pretendo"></div>
+                </section>
+
+                <section class="prateleira" data-status="Lendo">
+                    <h2>Lendo <span class="contagem" id="contagem-lendo">0</span></h2>
+                    <div class="lista-livros" id="lista-lendo"></div>
+                </section>
+
+                <section class="prateleira" data-status="Finalizado">
+                    <h2>Finalizado <span class="contagem" id="contagem-finalizado">0</span></h2>
+                    <div class="lista-livros" id="lista-finalizado"></div>
+                </section>
+            </main>
+
+        </div>
+    </div>
+
+    <script src="/src/server.js"></script>
+</body>
+
+</html>
