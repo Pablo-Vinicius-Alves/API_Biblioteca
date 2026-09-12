@@ -1,239 +1,78 @@
-:root {
-  --fundo: #ccc7be;
-  --tinta: #2c2c2c;
-  --tinta-suave: #30302f;
-  --verde: #3b5d50;
-  --verde-escuro: #2a453b;
-  --mostarda: #c9932b;
-  --linha: #ddd6c4;
-  --branco-cartao: #ffffff;
-}
-
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  background: var(--fundo);
-  color: var(--tinta);
-  font-family: "Work Sans", sans-serif;
-  line-height: 1.5;
+    font-family: Arial, sans-serif;
+    background-color: #bbb9b4;
+    color: #111111;
+    margin: 20px;
 }
 
-h1, h2 {
-  font-family: "Fraunces", serif;
-  margin: 0;
+header h1 {
+    color: #2a5243;
 }
 
-.pagina {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 48px 24px 80px;
+form {
+    background-color: rgba(2, 41, 13, 0.719);
+    border: 1px solid #041100;
+    padding: 15px;
+    max-width: 300px;
+    margin-bottom: 30px;
 }
 
-.topo {
-  border-bottom: 1px solid var(--linha);
-  padding-bottom: 28px;
-  margin-bottom: 40px;
+form label {
+    display: block;
+    color: aliceblue;
+    margin-top: 10px;
+    font-size: 14px;
 }
 
-.topo h1 {
-  font-size: 2.6rem;
-  font-weight: 600;
-  color: var(--verde-escuro);
+form input,
+form select {
+    width: 100%;
+    padding: 6px;
+    margin-top: 3px;
+    border: 1px solid #ccc;
 }
 
-.subtitulo {
-  margin: 8px 0 0;
-  color: var(--tinta-suave);
-  font-size: 1.05rem;
+form button {
+    margin-top: 15px;
+    padding: 8px 12px;
+    background-color: #663700a9;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
-.layout {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 40px;
-  align-items: start;
+form button:hover {
+    background-color: #2a453b;
 }
 
-.painel-form {
-  background: var(--branco-cartao);
-  border: 1px solid var(--linha);
-  border-radius: 6px;
-  padding: 24px;
-  position: sticky;
-  top: 32px;
+section {
+    margin-bottom: 25px;
 }
 
-.painel-form h2 {
-  font-size: 1.2rem;
-  margin-bottom: 18px;
-  color: var(--verde-escuro);
-}
-
-.campo {
-  margin-bottom: 16px;
-}
-
-.campo label {
-  display: block;
-  font-size: 0.85rem;
-  color: var(--tinta-suave);
-  margin-bottom: 5px;
-}
-
-.campo input,
-.campo select {
-  width: 100%;
-  padding: 9px 10px;
-  border: 1px solid var(--linha);
-  border-radius: 4px;
-  font: inherit;
-  color: var(--tinta);
-  background: var(--fundo);
-}
-
-.campo input:focus,
-.campo select:focus,
-button:focus-visible {
-  outline: 2px solid var(--mostarda);
-  outline-offset: 1px;
-}
-
-.linha-dupla {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.painel-form button {
-  width: 100%;
-  padding: 11px;
-  margin-top: 4px;
-  border: none;
-  border-radius: 4px;
-  background: var(--verde);
-  color: #fff;
-  font-family: inherit;
-  font-size: 0.95rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.15s ease;
-}
-
-.painel-form button:hover {
-  background: var(--verde-escuro);
-}
-
-.erro-form {
-  color: #a3392e;
-  font-size: 0.85rem;
-  margin-top: 10px;
-  margin-bottom: 0;
-}
-
-.estante {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.prateleira h2 {
-  font-size: 1.15rem;
-  font-weight: 500;
-  color: var(--tinta);
-  border-bottom: 2px solid var(--verde);
-  padding-bottom: 10px;
-  margin-bottom: 16px;
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-}
-
-.contagem {
-  font-family: "Work Sans", sans-serif;
-  font-size: 0.85rem;
-  color: var(--tinta-suave);
-  font-weight: 400;
-}
-
-.lista-livros {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 14px;
+section h2 {
+    border-bottom: 2px solid #3b5d50;
+    padding-bottom: 5px;
 }
 
 .livro {
-  background: var(--branco-cartao);
-  border: 1px solid var(--linha);
-  border-left: 4px solid var(--mostarda);
-  border-radius: 4px;
-  padding: 14px 16px;
-  position: relative;
-}
-
-.prateleira[data-status="Lendo"] .livro {
-  border-left-color: var(--verde);
-}
-
-.prateleira[data-status="Finalizado"] .livro {
-  border-left-color: var(--tinta-suave);
+    background-color: white;
+    border: 1px solid #ccc;
+    border-left: 4px solid #c9932b;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
 .livro h3 {
-  font-family: "Fraunces", serif;
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin: 0 0 4px;
-}
-
-.livro p {
-  margin: 0;
-  font-size: 0.88rem;
-  color: var(--tinta-suave);
-}
-
-.livro-acoes {
-  display: flex;
-  gap: 6px;
-  margin-top: 10px;
-}
-
-.livro-acoes select {
-  flex: 1;
-  font-size: 0.8rem;
-  padding: 5px 6px;
-  border-radius: 4px;
-  border: 1px solid var(--linha);
-  background: var(--fundo);
+    margin: 0 0 5px 0;
 }
 
 .livro-acoes button {
-  border: none;
-  background: none;
-  color: #a3392e;
-  font-size: 0.8rem;
-  cursor: pointer;
-  padding: 5px 6px;
-}
-
-.livro-acoes button:hover {
-  text-decoration: underline;
-}
-
-.vazio {
-  color: var(--tinta-suave);
-  font-size: 0.9rem;
-  font-style: italic;
-}
-
-@media (max-width: 720px) {
-  .layout {
-    grid-template-columns: 1fr;
-  }
-
-  .painel-form {
-    position: static;
-  }
+    color: red;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
