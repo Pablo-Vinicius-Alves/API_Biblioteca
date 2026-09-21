@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '../public')));
 
 let livros = [
-    { id: 1, nome: "1984", autor: "George Orwell", status: "Fechado", paginas: 280 },
+    { id: 1, nome: "1984", autor: "George Orwell", status: "Finalizado", paginas: 280 },
     { id: 2, nome: "Capeta Azul", autor: "Alex Ricardo", status: "Lendo", paginas: 401 }
 ];
 
@@ -56,7 +56,7 @@ app.put('/livros/:id', (req, res) => {
     res.json(livro);
 });
 
-app.delete('/livro/:id', (req, res) =>{
+app.delete('/livros/:id', (req, res) =>{
     const index = livros.findIndex(li => li.id === Number(req.params.id));
     if( index ===  -1) return res.status(404).json({ erro: 'Livro não encontrado '});
 
